@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace SonarSweep.App
                 Uri uri = new Uri($"https://adventofcode.com/2021/day/{day}/input");
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
                 request.CookieContainer = new CookieContainer();
-                var json = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText("data.json"));
+                var json = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText("session-cookie.json"));
                 string sessionCookie = json["session"];
                 request.CookieContainer.Add(new Cookie("session", sessionCookie, "/", uri.Host));
                 WebResponse response = request.GetResponse();
@@ -30,15 +31,13 @@ namespace SonarSweep.App
             else
             {
                 return File.ReadAllText(filename);
-            }
-            
+            }          
 
         }
         static void Main(string[] args)
         {
-            
-
-            IList<int> numbers = GetTodaysData(1).Select(i => Convert.ToInt32(i)).ToList();
+            string data = GetTodaysData(1).TrimEnd();
+            IList<int> numbers = data.Split('\n').Select(i => Convert.ToInt32(i)).ToList();
             int count = 0;
             int previous = numbers[0] + 1;
             foreach (int n in numbers) {

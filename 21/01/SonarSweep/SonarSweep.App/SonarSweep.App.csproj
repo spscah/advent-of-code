@@ -6,7 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Update="data.txt">
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="session-cookie.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
