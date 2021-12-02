@@ -332,4 +332,6 @@ ASALocalRun/
 
 # Local History for Visual Studio
 .localhistory/
+
+# AoC specific hiding
 session-cookie.json
