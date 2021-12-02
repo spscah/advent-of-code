@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31313.79
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SonarSweep.App", "SonarSweep.App\SonarSweep.App.csproj", "{8A8C8C89-5DC0-4F3C-8F15-198FCF4E9C1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SonarSweep.App", "SonarSweep.App\SonarSweep.App.csproj", "{8A8C8C89-5DC0-4F3C-8F15-198FCF4E9C1F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdventOfCode.Lib", "..\..\..\AdventOfCode\AdventOfCode.Lib\AdventOfCode.Lib.csproj", "{9210BC02-2784-49F5-9353-A075C1FC3A69}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{8A8C8C89-5DC0-4F3C-8F15-198FCF4E9C1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A8C8C89-5DC0-4F3C-8F15-198FCF4E9C1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A8C8C89-5DC0-4F3C-8F15-198FCF4E9C1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9210BC02-2784-49F5-9353-A075C1FC3A69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9210BC02-2784-49F5-9353-A075C1FC3A69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9210BC02-2784-49F5-9353-A075C1FC3A69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9210BC02-2784-49F5-9353-A075C1FC3A69}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

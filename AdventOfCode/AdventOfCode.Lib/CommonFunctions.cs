@@ -39,7 +39,7 @@ namespace AdventOfCode.Lib
             return GetTodaysData(day).TrimEnd().Split('\n');
         }
 
-        public static IList<int> AsListOfIntegers(int day)
+        public static IList<int> AsListOfIntegers(this int day)
         {
             return AsListOfStrings(day).Select(i => Convert.ToInt32(i)).ToList();
         }
