@@ -9,9 +9,9 @@ namespace AdventOfCode.Lib
 {
     public static class CommonFunctions
     {
-        static string GetTodaysData(int day)
+        static string GetTodaysData(int day, bool test)
         {
-            string filename = "today.txt";
+            string filename = test ? "test.txt" : "today.txt";
             if (!File.Exists(filename))
             {
                 Uri uri = new Uri($"https://adventofcode.com/2021/day/{day}/input");
@@ -34,19 +34,19 @@ namespace AdventOfCode.Lib
 
         }
 
-        public static IList<string> AsListOfStrings(this int day)
+        public static IList<string> AsListOfStrings(this int day, bool test = false)
         {
-            return GetTodaysData(day).TrimEnd().Split('\n');
+            return GetTodaysData(day, test).TrimEnd().Split('\n');
         }
 
-        public static IList<int> AsListOfIntegers(this int day)
+        public static IList<int> AsListOfIntegers(this int day, bool test = false)
         {
-            return AsListOfStrings(day).Select(i => Convert.ToInt32(i)).ToList();
+            return AsListOfStrings(day, test).Select(i => Convert.ToInt32(i)).ToList();
         }
 
-        public static IList<ValueTuple<string,int>> AsStringIntegerPairs(this int day)
+        public static IList<ValueTuple<string,int>> AsStringIntegerPairs(this int day, bool test = false)
         {
-            return AsListOfStrings(day).Select(i => i.Split(' ')).Select(p => (p[0], Convert.ToInt32(p[1]))).ToList();
+            return AsListOfStrings(day, test).Select(i => i.Split(' ')).Select(p => (p[0], Convert.ToInt32(p[1]))).ToList();
         }
     }
 }
