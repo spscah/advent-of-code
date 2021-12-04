@@ -336,4 +336,4 @@ ASALocalRun/
 # AoC specific hiding
 session-cookie.json
 .vscode/
-today.txt // ignore the cached personal input data 
+today.txt # ignore the cached personal input data 
