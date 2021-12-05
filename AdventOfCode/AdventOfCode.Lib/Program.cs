@@ -10,7 +10,7 @@ namespace GiantSquid.App
     {
         static void Main(string[] args)
         {
-            const int TODAY = dt;
+            const int TODAY = 0;
             const bool TEST = true;
             IList<string> data = TODAY.AsListOfStrings(TEST);
         }
