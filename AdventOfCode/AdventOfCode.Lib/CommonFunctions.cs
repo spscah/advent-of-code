@@ -48,5 +48,11 @@ namespace AdventOfCode.Lib
         {
             return AsListOfStrings(day, test).Select(i => i.Split(' ')).Select(p => (p[0], Convert.ToInt32(p[1]))).ToList();
         }
+
+        public static IList<int> CsvToIntegers(this int day, bool test = false)
+        {
+            return GetTodaysData(day, test).TrimEnd().Split(',').Select(i => Convert.ToInt32(i)).ToList();
+        }
+
     }
 }
