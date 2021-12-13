@@ -36,7 +36,7 @@ namespace AdventOfCode.Lib
 
         public static IList<string> AsListOfStrings(this int day, bool test = false)
         {
-            return GetTodaysData(day, test).TrimEnd().Split('\n');
+            return GetTodaysData(day, test).TrimEnd().Split('\n').Select(l => l.Trim()).ToList();
         }
 
         public static IList<int> AsListOfIntegers(this int day, bool test = false)
