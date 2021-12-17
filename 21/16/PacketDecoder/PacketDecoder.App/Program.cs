@@ -32,7 +32,7 @@ namespace PacketDecoder.App
             var result = ParsePacket(ToBinaryString(data[0])); // 1004600 is too low 
 
             Console.WriteLine($"{result.Item2}"); 
-            Console.WriteLine($"{result.Item3}"); // 233391313 is too low, 124787442897 
+            Console.WriteLine($"{result.Item3}"); // 233391313 is too low, 124787442897 - 167737115857 - it is always about the longs 
         }
 
         static string ToBinaryString(string hex) {
