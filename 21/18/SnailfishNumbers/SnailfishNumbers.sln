@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnailfishNumbers.App", "SnailfishNumbers.App\SnailfishNumbers.App.csproj", "{6ED656E4-8492-46A1-9841-C760ED291944}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode.Lib", "..\..\..\AdventOfCode\AdventOfCode.Lib\AdventOfCode.Lib.csproj", "{FEFA7124-909A-47FF-A8B0-C3347B1CF432}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6ED656E4-8492-46A1-9841-C760ED291944}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6ED656E4-8492-46A1-9841-C760ED291944}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6ED656E4-8492-46A1-9841-C760ED291944}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6ED656E4-8492-46A1-9841-C760ED291944}.Debug|x64.Build.0 = Debug|Any CPU
+		{6ED656E4-8492-46A1-9841-C760ED291944}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6ED656E4-8492-46A1-9841-C760ED291944}.Debug|x86.Build.0 = Debug|Any CPU
+		{6ED656E4-8492-46A1-9841-C760ED291944}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6ED656E4-8492-46A1-9841-C760ED291944}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6ED656E4-8492-46A1-9841-C760ED291944}.Release|x64.ActiveCfg = Release|Any CPU
+		{6ED656E4-8492-46A1-9841-C760ED291944}.Release|x64.Build.0 = Release|Any CPU
+		{6ED656E4-8492-46A1-9841-C760ED291944}.Release|x86.ActiveCfg = Release|Any CPU
+		{6ED656E4-8492-46A1-9841-C760ED291944}.Release|x86.Build.0 = Release|Any CPU
+		{FEFA7124-909A-47FF-A8B0-C3347B1CF432}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEFA7124-909A-47FF-A8B0-C3347B1CF432}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEFA7124-909A-47FF-A8B0-C3347B1CF432}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{FEFA7124-909A-47FF-A8B0-C3347B1CF432}.Debug|x64.Build.0 = Debug|Any CPU
+		{FEFA7124-909A-47FF-A8B0-C3347B1CF432}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FEFA7124-909A-47FF-A8B0-C3347B1CF432}.Debug|x86.Build.0 = Debug|Any CPU
+		{FEFA7124-909A-47FF-A8B0-C3347B1CF432}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEFA7124-909A-47FF-A8B0-C3347B1CF432}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEFA7124-909A-47FF-A8B0-C3347B1CF432}.Release|x64.ActiveCfg = Release|Any CPU
+		{FEFA7124-909A-47FF-A8B0-C3347B1CF432}.Release|x64.Build.0 = Release|Any CPU
+		{FEFA7124-909A-47FF-A8B0-C3347B1CF432}.Release|x86.ActiveCfg = Release|Any CPU
+		{FEFA7124-909A-47FF-A8B0-C3347B1CF432}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
