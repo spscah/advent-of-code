@@ -34,9 +34,9 @@ namespace AdventOfCode.Lib
 
         }
 
-        public static IList<string> AsListOfStrings(this int day, bool test = false)
+        public static IList<string> AsListOfStrings(this int day, bool test = false, bool notrim = false)
         {
-            return GetTodaysData(day, test).TrimEnd().Split('\n').Select(l => l.Trim()).ToList();
+            return GetTodaysData(day, test).TrimEnd().Split('\n').Select(l => notrim ? l : l.Trim()).ToList();
         }
 
         public static IList<int> AsListOfIntegers(this int day, bool test = false)
@@ -53,6 +53,22 @@ namespace AdventOfCode.Lib
         {
             return GetTodaysData(day, test).TrimEnd().Split(',').Select(i => Convert.ToInt32(i)).ToList();
         }
+
+        public static IEnumerable<(int, int)> Generate(int a, int b) {
+            for(int i = 0; i < a; ++i)
+                for(int j = 0; j < b; ++j)
+                    yield return (i,j);
+
+        }
+
+        public static IEnumerable<(int, int, int)> Generate(int a, int b, int c, int offset = 0) {
+            for(int i = 0; i < a; ++i)
+                for(int j = 0; j < b; ++j)
+                    for(int k = 0; k < c; ++k)
+                        yield return (i+offset,j+offset,k+offset);
+
+        }
+
 
     }
 }
