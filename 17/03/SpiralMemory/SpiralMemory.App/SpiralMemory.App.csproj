@@ -1,7 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\AdventOfCode\AdventOfCode.Lib\AdventOfCode.Lib.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
