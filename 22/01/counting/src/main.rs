@@ -5,6 +5,7 @@ use std::path::Path;
 fn main() {
     let testdata = collect_integers("test.txt".to_string());
 
+    // tuples: https://doc.rust-lang.org/rust-by-example/primitives/tuples.html
     let (one, two) = calculation(testdata);
     assert_eq!(one, 24000);
     assert_eq!(two, 45000);
@@ -14,26 +15,6 @@ fn main() {
     println!("part one: {}", one);
     println!("part two: {}", two);
 }
-
-/*
-fn partone(numbers: Vec<String>) -> i32 {
-    let mut m = 0;
-    let mut current = 0;
-    for number in &numbers {
-        if number.trim().len() == 0 {
-            if current > m {
-                m = current;
-            }
-            current = 0;
-        } else {
-            let value: i32 = number.trim().parse().unwrap();
-            current += value;
-        }
-        //println!("{}, {}, {}", number, m, current);
-    }
-    m
-}
-*/
 
 fn calculation(numbers: Vec<String>) -> (i32, i32) {
     let mut m1 = 0;
@@ -54,6 +35,7 @@ fn calculation(numbers: Vec<String>) -> (i32, i32) {
             }
             current = 0;
         } else {
+            // https://stackoverflow.com/a/59659615/2902
             let value: i32 = number.trim().parse().unwrap();
             current += value;
         }
