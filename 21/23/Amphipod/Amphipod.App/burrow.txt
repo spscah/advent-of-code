@@ -1,0 +1,170 @@
+using System;
+using System.Collections.Generic;
+using AdventOfCode.Lib;
+using System.Linq;
+using System.Text;
+using System.Diagnostics;
+
+namespace Amphipod.App
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            const int TODAY = 23;
+            const bool TEST = false;
+            IList<string> data = TODAY.AsListOfStrings(TEST, true);
+
+            HashSet<(int,int,char)> origin = new HashSet<(int, int, char)>();
+            string valid = "ABCD.";
+            for(int r = 0; r < data.Count; ++r) {
+                for(int c = 0; c < data[r].Length; ++c) {
+                    if(valid.Contains(data[r][c]))
+                        origin.Add((r,c,data[r][c]));
+                }
+            }
+
+            Queue<Burrow> q = new Queue<Burrow>();
+            HashSet<Burrow> seen = new HashSet<Burrow>();
+            q.Enqueue((0, new Board(origin)));
+            HashSet<Burrow> winners = new HashSet<Burrow>();
+            while(q.Count > 0) {
+                Burrow head = q.Dequeue();
+
+                foreach(Burrow child in head.GenerateChildren()) {
+                    // if a winner, add the score and continue 
+                    if(child.IsFinished) {
+                        winners.Add(child);
+                        Console.WriteLine(winners.Select(b => b.Cost).Min());
+                        continue;
+                    }
+                    // have we seen it before? 
+                    // if not - add it to the seen list 
+                    if(!seen.Any(other => other.HasSameBoard(child)))
+                        seen.Add(child);
+
+                    // only enqueue if cost is still lower than the lowest winner found so far 
+                    if(winners.Count == 0 || child.Cost < winners.Select(b => b.Cost).Min())
+                        q.Enqueue(child);
+
+                }
+            }
+
+            Console.WriteLine(winners.Select(b => b.Cost).Min());
+        }
+
+        class Burrow {
+            readonly Board _board;
+            readonly int _score; 
+
+            internal Burrow(int score, Board b) {
+                _board = b;
+                _score = score;
+            }
+
+            internal bool HasSameBoard(Burrow other) {
+                return _board.Equals(other._board);
+            }
+
+            (bool sameboard, bool betterscore) Compare(Burrow other) {
+                bool same = _board.Equals(other._board);
+                bool better = same && _score < other._score;
+                return(same, better);
+            }
+
+            public static implicit operator Burrow((int s, Board b) value) => new Burrow(value.s, value.b);
+
+            internal IEnumerable<Burrow> GenerateChildren() {
+
+                foreach((int cost, Board board) child in _board.Children) {
+                    yield return new Burrow(_score + child.cost, child.board);              
+                }
+            }
+
+            public bool IsFinished => _board.IsFinished;
+            public int Cost => _score;
+        }
+
+        class Board : IEquatable<Board> { 
+            readonly HashSet<(int,int,char)> _board; 
+
+            readonly HashSet<(int,int,char)> targets = new HashSet<(int, int, char)> {
+                (2,3,'A'),
+                (3,3,'A'),
+                (2,5,'B'),
+                (3,5,'B'),
+                (2,7,'C'),
+                (3,7,'C'),
+                (2,9,'D'),
+                (3,9,'D'),
+            };
+
+            public bool IsFinished => targets.All(t => _board.Contains(t));
+
+            internal Board(IEnumerable<(int,int,char)> b) {
+                _board = new HashSet<(int, int, char)>(b);
+            }
+
+            public IEnumerable<(int,Board)> Children { 
+                get {
+                    foreach((int r, int c, char ch) position in _board.Where(p => p.Item3 != '.')) {
+                        foreach((int r, int c) n in Neighbours((position.r, position.c))) {
+                            // the neigbour must be a dot 
+                            if(!_board.Any(i => i.Equals((n.r,n.c,'.'))))
+                                continue;
+                            HashSet<(int,int,char)> newHS = new HashSet<(int, int, char)> (_board.Select(p => p));                        
+                            // remove the position 
+                            newHS.Remove(position);
+                            // remove the target dot 
+                            newHS.Remove((n.r, n.c, '.'));
+                            // add a dot at the original 
+                            newHS.Add((position.r, position.c, '.'));
+                            // add the new target 
+                            newHS.Add((n.r, n.c, position.ch));
+                            // update the score 
+                            int cost = (int)Math.Pow(10, position.ch-'A');
+
+                            yield return (cost, new Board(newHS));
+                        }
+                    }
+                }
+            }
+
+            public Board Clone()
+            {
+                return new Board(_board.AsEnumerable());
+            }
+
+            public bool Equals(Board other)
+            {
+                return _board.Count == other._board.Count && ToString() == other.ToString();
+            }
+
+            public override int GetHashCode()
+            {
+                return ToString().GetHashCode();
+            }
+
+            static IEnumerable<(int,int)> Neighbours((int r, int c) point) {
+                yield return (point.r-1, point.c);
+                yield return (point.r+1, point.c);
+                yield return (point.r, point.c-1);
+                yield return (point.r, point.c+1);
+            }    
+
+            public override string ToString() {
+                char[,] grid = new char[5,13];
+                foreach((int r, int c, char ch) point in _board) 
+                    grid[point.r,point.c] = point.ch;
+                StringBuilder sb = new StringBuilder();
+                for(int r = 0; r < 5; ++r) {
+                    for(int c = 0; c < 13; ++c) {
+                        sb.Append(grid[r,c] == 0 ? '#' : grid[r,c]);
+                    }
+                    sb.AppendLine();
+                }
+                return sb.ToString();
+            }
+        }
+    }
+}
