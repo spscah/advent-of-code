@@ -9,4 +9,5 @@ This year I am trying to produce solutions in as many forms as possible.
 | 03 | x |   |   |   | sets |
 | 04 | x |   |   |   | overlaps |
 | 05 |   | x |   |   | stacks | 
+| 06 |   | x |   |   | sets | 
 | dd |   |   |   |   |  |
