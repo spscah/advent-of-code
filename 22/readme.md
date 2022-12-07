@@ -10,4 +10,5 @@ This year I am trying to produce solutions in as many forms as possible.
 | 04 | x |   |   |   | overlaps |
 | 05 |   | x |   |   | stacks |
 | 06 |   | x |   | x | sets |
+| 06 | x |   |   |   | dictionary, tree |
 | dd |   |   |   |   |  |
