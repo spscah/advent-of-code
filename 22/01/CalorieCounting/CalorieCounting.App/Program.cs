@@ -7,7 +7,7 @@ Console.WriteLine($"part one: {result.p1}{Environment.NewLine}part two: {result.
 (int, int) Results(string filename)
 {
     List<string> data = File.ReadAllLines(filename).ToList();
-    if (!string.IsNullOrEmpty(data.Last())) data.Add(string.Empty);
+    
     IList<int> results = new List<int> { 0, 0, 0};
     int current = 0; 
     foreach(string s in data) {   
