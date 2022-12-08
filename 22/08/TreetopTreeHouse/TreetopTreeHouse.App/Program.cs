@@ -25,9 +25,52 @@ int Result(IList<string> data, bool partone) {
 int Visibility(IList<string> data) {
     int value=-1;
 
-    for(int r = 0; r < data.Count; r++) {
-        for(int c = 0; c < data[r].Count; c++) {
+    for (int r = 0; r < data.Count; r++)
+    {
+        for (int c = 0; c < data[r].Length; c++)
+        {
+            List<int> directions = new();
+            int temp = 0;
+            for(int up = r-1; up >= 0; --up)
+            {
+                ++temp;
+                if (data[up][c] >= data[r][c])
+                    up = -1;
+            }
+            directions.Add(temp);
 
+            temp = 0;
+            for (int left = c - 1; left >= 0; --left)
+            {
+                ++temp;
+                if (data[r][left] >= data[r][c])
+                    left = -1;
+            }
+            directions.Add(temp);
+
+            temp = 0;
+            for (int right = c + 1; right < data[r].Length; ++right)
+            {
+                ++temp;
+                if (data[r][right] >= data[r][c])
+                    right = data[r].Length;
+            }
+            directions.Add(temp);
+
+            temp = 0;
+            for (int down = r + 1; down < data.Count; ++down)
+            {
+                ++temp;
+                if (data[down][c] >= data[r][c])
+                    down = data.Count;
+            }
+            directions.Add(temp);
+
+            int score = directions.Aggregate(1, (r, i) => r * i);
+            if (score > value)
+                value = score;
+        }
+    }
     return value;
 }
 
