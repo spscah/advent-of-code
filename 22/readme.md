@@ -11,5 +11,7 @@ This year I am trying to produce solutions in as many forms as possible.
 | 05 |   | x |   |   | stacks |
 | 06 |   | x |   | x | sets |
 | 07 | x |   |   |   | dictionary, tree |
-| 08 |   | x |   |   | grids|
+| 08 |   | x |   |   | grids |
+| 09 |   | (x) |   |   | location |
+| 08 | x | x |   |   | fencepost |
 | dd |   |   |   |   |  |
