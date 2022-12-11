@@ -13,5 +13,5 @@ This year I am trying to produce solutions in as many forms as possible.
 | 07 | x |   |   |   | dictionary, tree |
 | 08 |   | x |   |   | grids |
 | 09 |   | (x) |   |   | location |
-| 08 | x | x |   |   | fencepost |
+| 10 | x | x |   |   | fencepost |
 | dd |   |   |   |   |  |
