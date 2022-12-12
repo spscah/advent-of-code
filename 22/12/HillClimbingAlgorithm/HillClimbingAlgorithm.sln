@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HillClimbingAlgorithm.App", "HillClimbingAlgorithm.App\HillClimbingAlgorithm.App.csproj", "{0A46BDAB-6F18-4500-B516-5928BFCDA71E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A46BDAB-6F18-4500-B516-5928BFCDA71E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A46BDAB-6F18-4500-B516-5928BFCDA71E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A46BDAB-6F18-4500-B516-5928BFCDA71E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A46BDAB-6F18-4500-B516-5928BFCDA71E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1B949C36-65F6-4AA1-92FB-B99E9C56D5D3}
+	EndGlobalSection
+EndGlobal

@@ -8,13 +8,11 @@ Console.WriteLine($"part one: {result.p1}{Environment.NewLine}part two: {result.
 (int, int) Results(string filename)
 {
     IList<string> data = File.ReadAllLines(filename).Select(l => l.Trim()).ToList();
-    return (Result(data, true), 0); //  Result(data, false));
-}
 
-int Result(IList<string> data, bool partone)
-{
     List<(int x, int y)> headsPath = new() {  (0,0)};
     List<(int x, int y)> tailsPath = new();
+    List<(int x, int y)> chain = new() { headsPath.First(), headsPath.First() };
+    List<(int x, int y)> ten = new();
 
     foreach(string line in data)
     {
@@ -44,19 +42,44 @@ int Result(IList<string> data, bool partone)
 
             if (!AreNeighbours(nhead, ctail))
             {
-                if (nhead.y == ctail.y + 2)
-                    tailsPath.Add((nhead.x, nhead.y - 1));
-                else if (nhead.y == ctail.y - 2)
-                    tailsPath.Add((nhead.x, nhead.y + 1));
-                else if (nhead.x == ctail.x + 2)
-                    tailsPath.Add((nhead.x - 1, nhead.y));
-                else if (nhead.x == ctail.x - 2)
-                    tailsPath.Add((nhead.x + 1, nhead.y));
+                tailsPath.Add(MoveTail(nhead, ctail));
             }
+
+            if (i == 0)
+                chain[chain.Count-1] = nhead;
+            else 
+                chain.Add(nhead);
+
+            int index = 0;
+            while(index +1 < chain.Count)
+            {
+                if (!AreNeighbours(chain[index], chain[index + 1]))                
+                    chain[index + 1] = MoveTail(chain[index], chain[index + 1]);                
+                else 
+                    break;
+
+                ++index;
+            }
+
+            (int, int) tenth = chain.Count < 10 ? chain.First() : chain[chain.Count-10];
+            ten = ten.Union(new List<(int,int)>() { tenth }).ToList();
         }
     }
 
-    return tailsPath.Distinct().Count();
+    return (tailsPath.Distinct().Count(), ten.Distinct().Count());
+}
+
+(int x, int y) MoveTail((int x, int y) nhead, (int x, int y) ctail)
+{
+    if (nhead.y == ctail.y + 2)
+        return (nhead.x, nhead.y - 1);
+    else if (nhead.y == ctail.y - 2)
+        return (nhead.x, nhead.y + 1);
+    else if (nhead.x == ctail.x + 2)
+        return (nhead.x - 1, nhead.y);
+    else if (nhead.x == ctail.x - 2)
+        return (nhead.x + 1, nhead.y);
+    return (0, 0);
 }
 
 bool AreNeighbours((int x, int y) h, (int x, int y) t)

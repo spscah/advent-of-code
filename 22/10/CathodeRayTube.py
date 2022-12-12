@@ -1,10 +1,8 @@
-
 def output(drawing):
     offset = 0
     while offset < len(drawing):
         print(drawing[offset:offset+40])
         offset += 40
-
 
 for test in [True, False]:
     with open("today.txt" if not test else "test.txt", "r") as f:

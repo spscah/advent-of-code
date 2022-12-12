@@ -15,4 +15,5 @@ This year I am trying to produce solutions in as many forms as possible.
 | 09 |   | (x) |   |   | location |
 | 10 | x | x |   |   | fencepost |
 | 11 | x |   |   |   | ulong |
+| 12 |   | x |   |   | queue, grid |
 | dd |   |   |   |   |  |

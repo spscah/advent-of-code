@@ -132,7 +132,8 @@ namespace MonkeyBusiness.App
         static public ulong _parttwo = 0;
         readonly IList<ulong> _items = new List<ulong>();
         readonly ulong _worryFactor;
-        readonly ulong _test; public ulong TestFactor => _test;
+        readonly ulong _test; 
+        public ulong TestFactor => _test;
         readonly string _operation;
         int _inspected = 0;
         readonly int _ifTrue, _ifFalse;
