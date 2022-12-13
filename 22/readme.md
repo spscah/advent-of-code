@@ -16,4 +16,5 @@ This year I am trying to produce solutions in as many forms as possible.
 | 10 | x | x |   |   | fencepost |
 | 11 | x |   |   |   | ulong |
 | 12 |   | x |   |   | queue, grid |
+| 13 | x |   |   |   | eval(), sorting |
 | dd |   |   |   |   |  |
