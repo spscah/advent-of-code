@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-Debug.Assert(Results("test.txt") == (13, 0));
+Debug.Assert(Results("test.txt") == (13, 1));
 (int p1, int p2) result = Results("today.txt");
 Console.WriteLine($"part one: {result.p1}{Environment.NewLine}part two: {result.p2}");
 
@@ -11,8 +11,12 @@ Console.WriteLine($"part one: {result.p1}{Environment.NewLine}part two: {result.
 
     List<(int x, int y)> headsPath = new() {  (0,0)};
     List<(int x, int y)> tailsPath = new();
+<<<<<<< Updated upstream
     List<(int x, int y)> chain = new() { headsPath.First(), headsPath.First() };
     List<(int x, int y)> ten = new();
+=======
+    List<(int x, int y)> tens = new() {  headsPath.First()};
+>>>>>>> Stashed changes
 
     foreach(string line in data)
     {
@@ -44,6 +48,7 @@ Console.WriteLine($"part one: {result.p1}{Environment.NewLine}part two: {result.
             {
                 tailsPath.Add(MoveTail(nhead, ctail));
             }
+<<<<<<< Updated upstream
 
             if (i == 0)
                 chain[chain.Count-1] = nhead;
@@ -80,6 +85,14 @@ Console.WriteLine($"part one: {result.p1}{Environment.NewLine}part two: {result.
     else if (nhead.x == ctail.x - 2)
         return (nhead.x + 1, nhead.y);
     return (0, 0);
+=======
+            if (tailsPath.Count > 10)
+                tens.Add(tailsPath[tailsPath.Count - 10]);
+        }
+    }
+
+    return (tailsPath.Distinct().Count(), tens.Distinct().Count());
+>>>>>>> Stashed changes
 }
 
 bool AreNeighbours((int x, int y) h, (int x, int y) t)

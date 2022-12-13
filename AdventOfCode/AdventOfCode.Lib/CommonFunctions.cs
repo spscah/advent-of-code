@@ -14,7 +14,7 @@ namespace AdventOfCode.Lib
             string filename = test ? "test.txt" : "today.txt";
             if (!File.Exists(filename))
             {
-                Uri uri = new Uri($"https://adventofcode.com/2017/day/{day}/input");
+                Uri uri = new Uri($"https://adventofcode.com/2022/day/{day}/input");
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
                 request.CookieContainer = new CookieContainer();
                 Dictionary<string, string> json = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText("session-cookie.json"));
