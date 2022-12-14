@@ -17,4 +17,5 @@ This year I am trying to produce solutions in as many forms as possible.
 | 11 | x |   |   |   | ulong |
 | 12 |   | x |   |   | queue, grid |
 | 13 | x |   |   |   | eval(), sorting |
+| 14 |   | x |   |   | hashing, list/matrix |
 | dd |   |   |   |   |  |
