@@ -14,8 +14,9 @@ This year I am trying to produce solutions in as many forms as possible.
 | 08 |   | x |   |   | grids |
 | 09 |   | (x) |   |   | location |
 | 10 | x | x |   |   | fencepost |
-| 11 | x |   |   |   | ulong |
+| 11 | x |   |   |   | mod |
 | 12 |   | x |   |   | queue, grid |
 | 13 | x |   |   |   | eval(), sorting |
 | 14 |   | x |   |   | hashing, list/matrix |
+| 15 |   | x |   |   | brute force, u/long |
 | dd |   |   |   |   |  |
