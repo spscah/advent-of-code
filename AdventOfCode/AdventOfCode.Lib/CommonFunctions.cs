@@ -44,7 +44,7 @@ namespace AdventOfCode.Lib
             return AsListOfStrings(day, test).Select(i => Convert.ToInt32(i)).ToList();
         }
 
-        public static IList<ValueTuple<string,int>> AsStringIntegerPairs(this int day, bool test = false)
+        public static IList<ValueTuple<string, int>> AsStringIntegerPairs(this int day, bool test = false)
         {
             return AsListOfStrings(day, test).Select(i => i.Split(' ')).Select(p => (p[0], Convert.ToInt32(p[1]))).ToList();
         }
@@ -54,18 +54,20 @@ namespace AdventOfCode.Lib
             return GetTodaysData(day, test).TrimEnd().Split(',').Select(i => Convert.ToInt32(i)).ToList();
         }
 
-        public static IEnumerable<(int, int)> Generate(int a, int b) {
-            for(int i = 0; i < a; ++i)
-                for(int j = 0; j < b; ++j)
-                    yield return (i,j);
+        public static IEnumerable<(int, int)> Generate(int a, int b)
+        {
+            for (int i = 0; i < a; ++i)
+                for (int j = 0; j < b; ++j)
+                    yield return (i, j);
 
         }
 
-        public static IEnumerable<(int, int, int)> Generate(int a, int b, int c, int offset = 0) {
-            for(int i = 0; i < a; ++i)
-                for(int j = 0; j < b; ++j)
-                    for(int k = 0; k < c; ++k)
-                        yield return (i+offset,j+offset,k+offset);
+        public static IEnumerable<(int, int, int)> Generate(int a, int b, int c, int offset = 0)
+        {
+            for (int i = 0; i < a; ++i)
+                for (int j = 0; j < b; ++j)
+                    for (int k = 0; k < c; ++k)
+                        yield return (i + offset, j + offset, k + offset);
 
         }
 
