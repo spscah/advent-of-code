@@ -20,4 +20,5 @@ This year I am trying to produce solutions in as many forms as possible.
 | 14 |   | x |   |   | hashing, list/matrix |
 | 15 |   | x |   |   | brute force, u/long |
 | 16 |   | x |   |   | brute force, elephants, bfs |
+| 17 |   | x |   |   | bitwise, bruteforce, cycles |
 | dd |   |   |   |   |  |
