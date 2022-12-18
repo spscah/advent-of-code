@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoilingBoulders.App", "BoilingBoulders.App\BoilingBoulders.App.csproj", "{335CB37B-9D56-4ECF-9C45-CA2020BCF420}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode.Lib", "..\..\..\AdventOfCode\AdventOfCode.Lib\AdventOfCode.Lib.csproj", "{C82DB4DA-9C2A-4D7F-9958-3854D799F9C6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{335CB37B-9D56-4ECF-9C45-CA2020BCF420}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{335CB37B-9D56-4ECF-9C45-CA2020BCF420}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{335CB37B-9D56-4ECF-9C45-CA2020BCF420}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{335CB37B-9D56-4ECF-9C45-CA2020BCF420}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C82DB4DA-9C2A-4D7F-9958-3854D799F9C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C82DB4DA-9C2A-4D7F-9958-3854D799F9C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C82DB4DA-9C2A-4D7F-9958-3854D799F9C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C82DB4DA-9C2A-4D7F-9958-3854D799F9C6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
