@@ -22,4 +22,6 @@ This year I am trying to produce solutions in as many forms as possible.
 | 16 |   | x |   |   | brute force, elephants, bfs |
 | 17 |   | x |   |   | bitwise, bruteforce, cycles |
 | 18 |   | x |   |   | cubes, neighbours |
+| 19 |   | (x) |   |   | brute force, encoding |
+| 20 |   |   |   |   | mod, deque |
 | dd |   |   |   |   |  |
