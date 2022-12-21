@@ -1,10 +1,5 @@
-using System;
-using System.Collections.Generic;
 using AdventOfCode.Lib;
-using System.Linq;
-using System.Text;
 using System.Diagnostics;
-using System.Text.RegularExpressions;
 
 namespace MonkeyMath.App
 {
@@ -14,15 +9,15 @@ namespace MonkeyMath.App
         {
             const int TODAY = 21;
             IList<string> test = TODAY.AsListOfStrings(true);
-            Debug.Assert(Result(test) == (152, 0));
+            Debug.Assert(Result(test) == (152, 301));
 
             IList<string> real = TODAY.AsListOfStrings(false);
-            (ulong partone, int parttwo) result = Result(real);
+            (long partone, long parttwo) result = Result(real);
             Console.WriteLine($"Part 1: {result.partone}");
             Console.WriteLine($"Part 2: {result.parttwo}");
         }
 
-        static (ulong partone, int parttwo) Result(IList<string> real)
+        static (long partone, long parttwo) Result(IList<string> real)
         {
             Dictionary<string, Node> nodes = new();
             Dictionary<string, (string l, char op, string r)> todo = new();
@@ -34,7 +29,7 @@ namespace MonkeyMath.App
                 if (bits.Count == 2)
                 {
                     // leaf node 
-                    nodes.Add(bits[0].Substring(0, 4), new Node(ulong.Parse(bits[1])));
+                    nodes.Add(bits[0].Substring(0, 4), new Node(long.Parse(bits[1]), bits[0].StartsWith("humn")));
                 }
                 else
                 {
@@ -56,20 +51,19 @@ namespace MonkeyMath.App
                 }
             }
 
-            return (nodes["root"].Value.Value, 0);
+            return (nodes["root"].Value.Value, nodes["root"].RootCalculation);
         }
     }
 
     class Node
     {
-        Node? _left;
-        Node? _right;
-        ulong? _value;
+        Node? _left = null;
+        Node? _right = null;
+        long? _value;
         readonly char? _op;
-        readonly bool root = false;
-        readonly bool human = false;
+        readonly bool _human;
 
-        public ulong? Value
+        public long? Value
         {
             get
             {
@@ -78,10 +72,11 @@ namespace MonkeyMath.App
             }
         }
 
-        public Node(ulong value)
+        public Node(long value, bool human)
         {
             _op = null;
             _value = value;
+            _human = human;
         }
 
         public Node(Node left, char op, Node right)
@@ -90,6 +85,58 @@ namespace MonkeyMath.App
             _left = left;
             _right = right;
             _value = null;
+            _human = false;
+        }
+
+        public long RootCalculation
+        {
+            get
+            {
+                if (_left.HasHuman)
+                    return _left.Calculation(_right.Value.Value);
+                else
+                    return _right.Calculation(_left.Value.Value);
+            }
+
+        }
+
+        long Calculation(long target)
+        {
+            if (_left == null || _right == null)
+                return target;
+
+            if (_left.HasHuman)
+            {
+                switch (_op)
+                {
+                    case '+': return _left.Calculation(target - _right.Value.Value);
+                    case '-': return _left.Calculation(_right.Value.Value + target);
+                    case '*': return _left.Calculation(target / _right.Value.Value);
+                    case '/': return _left.Calculation(_right.Value.Value * target);
+                }
+            }
+            else
+            {
+                switch (_op)
+                {
+                    case '+': return _right.Calculation(target - _left.Value.Value);
+                    case '-': return _right.Calculation(_left.Value.Value - target);
+                    case '*': return _right.Calculation(target / _left.Value.Value);
+                    case '/': return _right.Calculation(_left.Value.Value / target);
+                }
+            }
+            throw new Exception("Shouldn't get here");
+        }
+
+        public bool HasHuman
+        {
+            get
+            {
+                if (_human) return true;
+                if (_left != null && _left.HasHuman) return true;
+                if (_right != null && _right.HasHuman) return true;
+                return false;
+            }
         }
 
         public bool Calculate()
@@ -97,8 +144,6 @@ namespace MonkeyMath.App
             if (_value.HasValue) return true;
             if (!_left.Calculate()) return false;
             if (!_right.Calculate()) return false;
-
-
 
             switch (_op)
             {
@@ -117,6 +162,18 @@ namespace MonkeyMath.App
 
             }
             return true;
+        }
+
+        public override string ToString()
+        {
+            if (_op.HasValue)
+            {
+                string left = _left.HasHuman ? "H" : _left.Value.ToString();
+                string right = _right.HasHuman ? "H" : _right.Value.ToString();
+                return $"({left} {_op} {right})";
+            }
+            else
+                return _value.ToString();
         }
     }
 }

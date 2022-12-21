@@ -24,4 +24,5 @@ This year I am trying to produce solutions in as many forms as possible.
 | 18 |   | x |   |   | cubes, neighbours |
 | 19 |   | (x) |   |   | brute force, encoding |
 | 20 |   |   |   |   | mod, deque |
+| 21 |   |   |   |   | binary tree |
 | dd |   |   |   |   |  |
