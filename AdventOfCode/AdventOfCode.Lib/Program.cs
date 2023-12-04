@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Diagnostics;
 
-namespace GiantSquid.App
+namespace ChangeMe.App
 {
     class Program
     {
@@ -13,7 +13,7 @@ namespace GiantSquid.App
         {
             const int TODAY = 0;
             IList<string> test = TODAY.AsListOfStrings(true);
-            Debug.Assert(Result(test) == (26, 0));
+            Debug.Assert(Result(test) == (0, 0));
 
             IList<string> real = TODAY.AsListOfStrings(false);
             (int partone, int parttwo) result = Result(real);
