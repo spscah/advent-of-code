@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CubeConundrum.App", "CubeConundrum.App\CubeConundrum.App.csproj", "{36FB13FA-F4D1-415A-B95F-B0C2F408C372}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode.Lib", "..\..\..\AdventOfCode\AdventOfCode.Lib\AdventOfCode.Lib.csproj", "{B15732AC-D6EF-46B5-832E-8E53EBAEEB33}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{36FB13FA-F4D1-415A-B95F-B0C2F408C372}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36FB13FA-F4D1-415A-B95F-B0C2F408C372}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36FB13FA-F4D1-415A-B95F-B0C2F408C372}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36FB13FA-F4D1-415A-B95F-B0C2F408C372}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B15732AC-D6EF-46B5-832E-8E53EBAEEB33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B15732AC-D6EF-46B5-832E-8E53EBAEEB33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B15732AC-D6EF-46B5-832E-8E53EBAEEB33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B15732AC-D6EF-46B5-832E-8E53EBAEEB33}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
