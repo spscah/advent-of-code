@@ -60,13 +60,14 @@ for seed in seeds:
 
 partone = min(results)
 
-results2 = {}
+parttwo = location(seeds[0], maps, mps)
 
-for seed in range(seeds[1]):
-	if seed not in results2.keys():
-		results2[seed] = location(seeds[0]+seed, maps, mps)
+for i in range(0, len(seeds),2):
+	for seed in range(seeds[i]):
+		result = location(seeds[i]+seed, maps, mps)
+		if result < parttwo:
+			parttwo = result 
 
-parttwo = min(results2.values())
 
 if test: 
 	assert(partone == 35)
