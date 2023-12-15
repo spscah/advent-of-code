@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LensLibrary.App", "LensLibrary.App\LensLibrary.App.csproj", "{1C422C15-61B7-4949-AC8D-DE3E9A700CDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode.Lib", "..\..\..\AdventOfCode\AdventOfCode.Lib\AdventOfCode.Lib.csproj", "{9C795141-B638-4998-9390-AC28873CBA7F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C422C15-61B7-4949-AC8D-DE3E9A700CDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C422C15-61B7-4949-AC8D-DE3E9A700CDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C422C15-61B7-4949-AC8D-DE3E9A700CDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C422C15-61B7-4949-AC8D-DE3E9A700CDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C795141-B638-4998-9390-AC28873CBA7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C795141-B638-4998-9390-AC28873CBA7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C795141-B638-4998-9390-AC28873CBA7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C795141-B638-4998-9390-AC28873CBA7F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

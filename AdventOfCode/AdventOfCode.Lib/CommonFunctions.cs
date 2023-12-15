@@ -10,9 +10,13 @@ namespace AdventOfCode.Lib
 {
     public static class CommonFunctions
     {
-        static string GetTodaysData(int day, bool test)
+        static string GetTodaysData(int day, bool test, string touse = null)
         {
             string filename = test ? "test.txt" : "today.txt";
+            if (test && touse != null)
+            {
+                filename = touse;
+            }
             if (!File.Exists(filename))
             {
                 Uri uri = new Uri($"https://adventofcode.com/2023/day/{day}/input");

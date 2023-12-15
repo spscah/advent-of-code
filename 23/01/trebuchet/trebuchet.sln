@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "trebuchet.App", "trebuchet.App\trebuchet.App.csproj", "{B7F8069F-53D8-47BC-A34B-75681B2BE571}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode.Lib", "..\..\..\AdventOfCode\AdventOfCode.Lib\AdventOfCode.Lib.csproj", "{80371AEA-BC45-418F-90F6-920295050980}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B7F8069F-53D8-47BC-A34B-75681B2BE571}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7F8069F-53D8-47BC-A34B-75681B2BE571}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7F8069F-53D8-47BC-A34B-75681B2BE571}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7F8069F-53D8-47BC-A34B-75681B2BE571}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80371AEA-BC45-418F-90F6-920295050980}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80371AEA-BC45-418F-90F6-920295050980}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80371AEA-BC45-418F-90F6-920295050980}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80371AEA-BC45-418F-90F6-920295050980}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
