@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Diagnostics;
 
-namespace ChangeMe.App
+namespace PulsePropagation.App
 {
     class Program
     {
         static void Main(string[] args)
         {
-            const int TODAY = 0;
+            const int TODAY = 20;
             IList<string> test = TODAY.AsListOfStrings(true);
             Debug.Assert(Result(test) == (0, 0));
 
@@ -27,4 +27,25 @@ namespace ChangeMe.App
         }
     }
 
+    class Module
+    {
+        bool _iIsFlipFlop;
+        bool _isInverter;
+        string _name;
+        IList<string> _outputs;
+        bool _state;
+        int _low;
+        int _high;
+
+        public Module(bool isFlipFlip, bool isInverter, string name, IList<string> outputs)
+        {
+            _iIsFlipFlop = isFlipFlip;
+            _isInverter = isInverter;
+            _name = name;
+            _outputs = outputs;
+            _state = false;
+            _low = 0;
+            _high = 0;
+        }
+    }
 }
